@@ -1,0 +1,18 @@
+projects:
+  foodrabbit-dev:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        region: ca-central-1
+        apiId: sykn3ggxz5blnpjksrgx7isugu
+        maxDepth: 4
+extensions:
+  amplify:
+    version: 3

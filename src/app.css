@@ -1,0 +1,69 @@
+
+@font-face {
+    font-family: "Losta Masta";
+    src: url("/fonts/LostaMasta-Regular.ttf");
+}
+
+html, body {
+    @apply flex flex-col flex-grow min-h-full;
+}
+
+.btn {
+    @apply bg-black text-white p-3 rounded-lg font-semibold;
+    border: 1.5px solid black;
+}
+
+.btn:hover {
+    @apply bg-black text-white p-3 rounded-lg font-semibold;
+    border: 1.5px solid black;
+}
+
+.btn:disabled {
+    @apply text-grey p-3 rounded-lg font-semibold bg-white bg-opacity-60;
+    border: 2px solid grey;
+
+}
+
+.btn-secondary {
+    @apply text-black p-3 rounded-lg font-semibold bg-white bg-opacity-60;
+    border: 1.5px solid black;
+}
+
+.input {
+    @apply p-2 rounded-lg shadow border-1 border-solid border-gray-500 bg-white h-10 font-sans placeholder-gray-500;
+}
+
+input:not([type=checkbox]),
+input:not([type=radio]) {
+    @apply p-2 rounded-lg shadow border-1 border-solid border-gray-500 bg-white h-10 font-sans placeholder-gray-500;
+}
+
+input[type=radio] {
+    @apply w-4 h-4 accent-black rounded-full;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+input[type=radio]:checked {
+        background-color: black;
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+}
+
+input[type=checkbox] {
+    @apply w-6 h-6 rounded-md bg-white border border-solid border-gray-500 accent-black;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+input[type=checkbox]:checked {
+    background-color: black;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
