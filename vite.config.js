@@ -10,6 +10,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, mergeConfig } from 'vite';
 import windicss from 'vite-plugin-windicss';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
 
 /** The common config, used by both SvelteKit and Storybook. */
 export const commonConfig = defineConfig({
@@ -26,6 +27,29 @@ export const commonConfig = defineConfig({
 	},
 	define: {
 		global: {}
+	},
+	optimizeDeps: {
+		esbuildOptions: {
+			// Node.js global to browser globalThis
+			define: {
+				global: 'globalThis' //<-- AWS SDK
+			}
+		}
+	},
+	build: {
+		rollupOptions: {
+			plugins: [
+				// Enable rollup polyfills plugin
+				// used during production bundling
+				rollupNodePolyFill()
+			]
+		},
+		target: 'esnext'
+	},
+	resolve: {
+		alias: {
+			'./runtimeConfig': './runtimeConfig.browser' // <-- Fix from above
+		}
 	}
 });
 
